@@ -47,12 +47,12 @@ Average: 85.2
 - Repo + short demo + Canvas
 
 ## Rubric (100)
+
 | Criterion | Pts |
 |-----------|----:|
-| Runs correctly on a supported path | 40 |
-| Meets prompt requirements | 30 |
-| Helpers have one job each | 15 |
-| GitHub + short demo video | 15 |
+| Code submitted that does the work | 50 |
+| Video explanation | 50 |
+
 
 ## Scope fence
 No classes. No globals. Guard a zero `n` if you can.
