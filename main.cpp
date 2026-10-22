@@ -1,14 +1,16 @@
 #include <iostream>
 
 // Lab 10 — Your Name
-// CIS 5 Week 10 · Functions
+// CIS 5 Week 10 · References & pointers
 
-// TODO: double average(const int a[], int n);
-// TODO: void printSummary(double avg);
+void swap_values(int& a, int& b) {
+  // TODO
+}
 
 int main() {
-  const int N = 5;
-  int scores[N] = {88, 92, 70, 95, 81};
-  // TODO: call helpers; keep main thin
+  int x = 3, y = 7;
+  std::cout << "Before: " << x << " " << y << "\n";
+  // TODO: swap_values(x, y);
+  // TODO: pointer walkthrough with int* p = &x;
   return 0;
 }

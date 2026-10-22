@@ -1,7 +1,7 @@
-# Lab 10 · Refactor to functions
+# Lab 10 · Mutate via reference
 
-**Week 10 · Functions**  
-**Theme:** Name the process  
+**Week 10 · References & pointers**  
+**Theme:** A nickname, or an address  
 **Type:** Lesson week
 
 
@@ -10,40 +10,51 @@
 Paste a link to a short video of you running this assignment (tool + code + run).
 Work without a working video link is incomplete.
 
+The video is half the grade. Show `x` and `y` before and after the swap, explain why the `&` lets `swap_values` change `main`'s variables, then show the pointer read.
+
 **Your demo:** _add your link here_
 
 
 ## Scenario
-A function is a named block you call from main. Take last week’s sweep (or a small score list) and split compute from print.
+
+Pass by value copies the argument. Pass by reference lets the function edit the original variable. A pointer stores that variable’s address.
 
 ## Goals
-- One helper that **returns** a number (`average`, or similar)
-- One helper that **prints** (`printSummary`, or similar)
-- `main` declares data, calls, returns — a table of contents
+
+- A function that edits through `int&` (swap, or normalize a score)
+- Print before and after in `main` — the caller’s box changed
+- One pointer read: `int* p = &x;` then print `*p`
+- No `new` / `delete`
 - Push + short demo + Canvas
 
 ## Starter
-Use `main.cpp`. Put your name in the file-top comment. Prototypes are sketched.
+
+Use `main.cpp`. Put your name in the file-top comment. `swap_values` is sketched.
 
 ## Environment
+
 VS 2022 · **GitHub Codespaces** · Replit · library machines
 
 ## Procedure
-1. Keep a small array in `main`
-2. Write `average` so it returns a `double`
-3. Write `printSummary` so it only talks
-4. Call them from `main`. Don’t leave the math in `main`
+
+1. Finish `swap_values` with a temp
+2. Call it. Print `x` and `y` after — they should have traded
+3. Point `p` at `x`. Print `*p`
+4. Optional: comment out the `&` in the parameters, rebuild, watch swap fail
 5. Commit, push, short demo, Canvas
 
 ## Sample output
+
 ```
-Average: 85.2
+Before: 3 7
+After: 7 3
+x via pointer: 7
 ```
 
 ## Definition of done
-- Two helpers besides `main`
-- At least one `return` value
-- `main` is thin
+
+- Reference mutation proven
+- Pointer read (not ownership)
 - Repo + short demo + Canvas
 
 ## Rubric (100)
@@ -53,16 +64,18 @@ Average: 85.2
 | Code submitted that does the work | 50 |
 | Video explanation | 50 |
 
-
 ## Scope fence
-No classes. No globals. Guard a zero `n` if you can.
+
+Stack boxes only. No `new` / `delete`. No pointer arithmetic.
 
 ## Tips
-- Define above `main`, or declare a prototype and define below — pick one style
-- A function that prints *and* computes is two jobs
-- `const int a[]` means read the row; don’t rewrite it
+
+- `int& r = x` — `r` is `x`
+- `&x` is the address. `*p` follows it
+- If swap takes `int a, int b`, nothing changes in `main`
 
 ## Help (`/ring`)
+
 After a real try, include: goal · what you tried · exact error · screenshot/repo · OS + tool.
 
 ## Getting started
